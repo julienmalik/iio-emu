@@ -70,6 +70,7 @@ ssize_t GenericRXDevice::read_dev(char* pbuf, size_t offset, size_t bytes_count)
 
 	m_input.read(pbuf, static_cast<long>(bytes_count));
 
+	/*
 	for (auto i = static_cast<size_t>(m_input.gcount()); i < bytes_count; i++) {
 		pbuf[i] = 0;
 	}
@@ -91,6 +92,7 @@ ssize_t GenericRXDevice::read_dev(char* pbuf, size_t offset, size_t bytes_count)
 	m_input.close();
 	tmpFile.close();
 	std::remove("iio_emu_tmp_file.txt");
+	*/
 
 	return static_cast<ssize_t>(bytes_count);
 }
